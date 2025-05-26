@@ -27,13 +27,22 @@ class BotLifecycle:
             "total_attempts": 0
         }
         self.last_result = []
+        self.word_list = []
+        self.backup_word_list = []
+        with open('words.txt', 'r') as words_file:
+            for word in words_file:
+                self.word_list.append(word.strip())
+        self.backup_word_list = self.word_list[:]
+
         
-    async def initialize(self):
+    def initialize(self):
         """Initialize the bot lifecycle"""
         self.state = BotState.WAITING_TO_START
-        print(f"\n{self.bot_name} initialized")
+        self.word_list = self.backup_word_list[:]
+
+        # print(f"\n{self.bot_name} initialized")
         
-    async def start_game(self, base_url: str) -> bool:
+    def start_game(self, base_url: str) -> bool:
         """Start a new Wordle game"""
         if self.state != BotState.WAITING_TO_START:
             raise ValueError("Bot must be waiting to start a game")
@@ -50,7 +59,7 @@ class BotLifecycle:
         self.last_result = []
         return True
         
-    async def make_guess(self, word: str) -> Dict:
+    def make_guess(self, word: str) -> Dict:
         """Make a guess in the current game"""
         if self.state != BotState.ACTIVE:
             raise ValueError("Bot must be active to make guesses")
@@ -66,7 +75,7 @@ class BotLifecycle:
         self.attempts.append(word)
         return result
         
-    async def complete_game(self, won: bool):
+    def complete_game(self, won: bool):
         """Complete the current game and update statistics"""
         if self.state != BotState.ACTIVE:
             raise ValueError("Cannot complete inactive game")
@@ -82,12 +91,12 @@ class BotLifecycle:
         
         self.state = BotState.COMPLETED
         
-    async def pause(self):
+    def pause(self):
         """Pause the current game"""
         if self.state == BotState.ACTIVE:
             self.state = BotState.PAUSED
             
-    async def resume(self):
+    def resume(self):
         """Resume a paused game"""
         if self.state == BotState.PAUSED:
             self.state = BotState.ACTIVE

@@ -1,0 +1,27 @@
+1st attempt
+time python3 play.py
+python3 play.py  32.25s user 0.19s system 97% cpu 33.129 total
+Final Stats: {'games_played': 230, 'games_won': 101, 'average_attempts': 5.456521739130435, 'total_attempts': 1255}
+
+2nd attempt
+python3 play.py  35.79s user 0.19s system 97% cpu 36.753 total
+Final Stats: {'games_played': 254, 'games_won': 101, 'average_attempts': 5.496062992125984, 'total_attempts': 1396}
+
+3rd attempt
+python3 play.py  6.10s user 0.10s system 94% cpu 6.529 total
+Final Stats: {'games_played': 143, 'games_won': 101, 'average_attempts': 4.8671328671328675, 'total_attempts': 696}
+
+4th attempt
+Final Stats: {'games_played': 12, 'games_won': 11, 'average_attempts': 4.5, 'total_attempts': 54}
+Final Stats: {'games_played': 13, 'games_won': 11, 'average_attempts': 5.153846153846154, 'total_attempts': 67}
+Final Stats: {'games_played': 14, 'games_won': 11, 'average_attempts': 4.857142857142857, 'total_attempts': 68}
+Final Stats: {'games_played': 14, 'games_won': 11, 'average_attempts': 5.071428571428571, 'total_attempts': 71}
+Final Stats: {'games_played': 14, 'games_won': 11, 'average_attempts': 4.857142857142857, 'total_attempts': 68}
+Final Stats: {'games_played': 17, 'games_won': 11, 'average_attempts': 5.176470588235294, 'total_attempts': 88}
+Final Stats: {'games_played': 15, 'games_won': 11, 'average_attempts': 5.0, 'total_attempts': 75}
+Final Stats: {'games_played': 14, 'games_won': 11, 'average_attempts': 4.785714285714286, 'total_attempts': 67}
+Final Stats: {'games_played': 16, 'games_won': 11, 'average_attempts': 5.3125, 'total_attempts': 85}
+
+real    0m1.699s
+user    0m11.963s
+sys     0m0.369s
